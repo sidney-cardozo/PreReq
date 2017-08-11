@@ -28,7 +28,22 @@ import Footer from '../../components/Footer/Footer';
 import Terms from '../../pages/Terms/Terms';
 import Privacy from '../../pages/Privacy/Privacy';
 import ExamplePage from '../../pages/ExamplePage/ExamplePage';
+{/*
 
+future React files
+
+import UserProfile from '../../pages/UserProfile/UserProfile';
+import UserSignup from '../../pages/UserSignup/UserSignup';
+import Search from '../..page/Search/Search'
+import EmployerProfile from '../../pages/EmployerProfile/EmployerProfile';
+import EmployerSignup from '../../pages/EmployerSignup/EmployerSignup';
+import EmployerJobs from '../../pages/EmployerJobs/EmployerJobs';
+import JobDetail from '../../pages/JobDetail/JobDetail';
+import NewJob from '../../pages/NewJob/NewJob';
+import EditJob from '../../pages/EditJob/EditJob';
+import Admin from '../../pages/Admin/Admin';
+
+*/}
 import './App.scss';
 
 const handleResendVerificationEmail = (emailAddress) => {
@@ -54,6 +69,21 @@ const App = props => (
           <Authenticated exact path="/documents/:_id" component={ViewDocument} {...props} />
           <Authenticated exact path="/documents/:_id/edit" component={EditDocument} {...props} />
           <Authenticated exact path="/profile" component={Profile} {...props} />
+          {/*
+
+          future paths
+
+          <Authenticated exact path="/user/profile" component={UserProfile} {...props} />
+          <Authenticated exact path="/user/search" component={Search} {...props} />
+          <Authenticated exact path="/employer/:_id/profile" component={EmployerProfile} {...props} />
+          <Authenticated exact path="/employer/:_id/jobs" component={EmployerJobs} {...props} />
+          <Authenticated exact path="/employer/:_id/jobs/new" component={NewJob} {...props} />
+          <Authenticated exact path="/employer/:_id/jobs/:_id" component={JobDetail} {...props} />
+          <Authenticated exact path="/employer/:_id/jobs/:_id/edit" component={EditJob} {...props} />
+          <Authenticated exact path="/admin" component={Admin} {...props} />
+          <Public path="/signup/employer" component={EmployerSignup} {...props} />
+          <Public path="/signup/user" component={UserSignup} {...props} />
+        */}
           <Public path="/signup" component={Signup} {...props} />
           <Public path="/login" component={Login} {...props} />
           <Public path="/logout" component={Logout} {...props} />

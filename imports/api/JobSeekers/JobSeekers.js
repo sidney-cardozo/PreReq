@@ -52,6 +52,10 @@ JobSeekers.schema = new SimpleSchema({
     type: Buffer,
     label: 'The user photo.',
   },
+  user :{
+    type: String,
+    label: "The user id of the jobseeker"
+  }
 });
 
 

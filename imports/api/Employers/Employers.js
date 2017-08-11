@@ -40,9 +40,9 @@ Employers.schema = new SimpleSchema({
     type: String,
     label: 'The logo url',
   },
-  user_id: {
+  user: {
     type: String,
-    label: 'The body of the document.',
+    label: 'The user id of the company.',
   },
 });
 
