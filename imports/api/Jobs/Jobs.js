@@ -19,7 +19,7 @@ Jobs.deny({
 
 Jobs.schema = new SimpleSchema({
   owner: {
-    type: Number,
+    type: String,
     label: 'The ID of the company this job belongs to.',
   },
   createdAt: {

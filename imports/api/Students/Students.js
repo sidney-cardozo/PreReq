@@ -18,9 +18,9 @@ Students.deny({
 });
 
 Students.schema = new SimpleSchema({
-  owner: {
+  jobSeeker: {
     type: String,
-    label: 'The ID of the user this student belongs to.',
+    label: 'The ID of the JobSeeker this student belongs to.',
   },
   createdAt: {
     type: String,
