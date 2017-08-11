@@ -3,25 +3,21 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-const Documents = new Mongo.Collection('Documents');
+const Employers = new Mongo.Collection('Employers');
 
-Documents.allow({
+Employers.allow({
   insert: () => false,
   update: () => false,
   remove: () => false,
 });
 
-Documents.deny({
+Employers.deny({
   insert: () => true,
   update: () => true,
   remove: () => true,
 });
 
-Documents.schema = new SimpleSchema({
-  owner: {
-    type: String,
-    label: 'The ID of the user this document belongs to.',
-  },
+Employers.schema = new SimpleSchema({
   createdAt: {
     type: String,
     label: 'The date this document was created.',
@@ -36,17 +32,21 @@ Documents.schema = new SimpleSchema({
       if (this.isInsert || this.isUpdate) return (new Date()).toISOString();
     },
   },
-  title: {
+  Description: {
     type: String,
-    label: 'The title of the document.',
+    label: 'The company description',
   },
-  body: {
+  logo_url: {
+    type: String,
+    label: 'The logo url',
+  },
+  user_id: {
     type: String,
     label: 'The body of the document.',
   },
 });
 
 
-Documents.attachSchema(Documents.schema);
+Employers.attachSchema(Employers.schema);
 
-export default Documents;
+export default Employers;

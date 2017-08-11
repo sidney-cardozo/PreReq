@@ -3,22 +3,22 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-const Documents = new Mongo.Collection('Documents');
+const JobSeekers = new Mongo.Collection('JobSeekers');
 
-Documents.allow({
+JobSeekers.allow({
   insert: () => false,
   update: () => false,
   remove: () => false,
 });
 
-Documents.deny({
+JobSeekers.deny({
   insert: () => true,
   update: () => true,
   remove: () => true,
 });
 
-Documents.schema = new SimpleSchema({
-  owner: {
+JobSeekers.schema = new SimpleSchema({
+  name: {
     type: String,
     label: 'The ID of the user this document belongs to.',
   },
@@ -36,17 +36,25 @@ Documents.schema = new SimpleSchema({
       if (this.isInsert || this.isUpdate) return (new Date()).toISOString();
     },
   },
-  title: {
-    type: String,
-    label: 'The title of the document.',
+  phone_number: {
+    type: SimpleSchema.integer,
+    label: 'The user phone number.',
   },
-  body: {
+  description: {
     type: String,
-    label: 'The body of the document.',
+    label: 'The description of the person.',
+  },
+  fields_interest: {
+    type: [String],
+    label: 'The fields of interest.',
+  },
+  photo: {
+    type: Buffer,
+    label: 'The user photo.',
   },
 });
 
 
-Documents.attachSchema(Documents.schema);
+JobSeekers.attachSchema(JobSeekers.schema);
 
-export default Documents;
+export default JobSeekers;
