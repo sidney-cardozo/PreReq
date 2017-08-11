@@ -43,7 +43,7 @@ Documents.schema = new SimpleSchema({
   body: {
     type: String,
     label: 'The body of the document.',
-  },
+  }
 });
 
 Documents.attachSchema(Documents.schema);

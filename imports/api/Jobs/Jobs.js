@@ -20,18 +20,18 @@ Jobs.deny({
 Jobs.schema = new SimpleSchema({
   owner: {
     type: Number,
-    label: 'The ID of the user this document belongs to.',
+    label: 'The ID of the company this job belongs to.',
   },
   createdAt: {
     type: String,
-    label: 'The date this document was created.',
+    label: 'The date this job was created.',
     autoValue() {
       if (this.isInsert) return (new Date()).toISOString();
     },
   },
   updatedAt: {
     type: String,
-    label: 'The date this document was last updated.',
+    label: 'The date this job was last updated.',
     autoValue() {
       if (this.isInsert || this.isUpdate) return (new Date()).toISOString();
     },
@@ -42,7 +42,7 @@ Jobs.schema = new SimpleSchema({
   },
   description: {
     type: String,
-    label: 'The body of the document.',
+    label: 'The body of the job.',
   },
   requirements: {
     type: String,
@@ -59,7 +59,7 @@ Jobs.schema = new SimpleSchema({
   tags: {
     type: [String],
     label: 'tags associated to this job',
-  },
+  }
 });
 
 Jobs.attachSchema(Jobs.schema);
